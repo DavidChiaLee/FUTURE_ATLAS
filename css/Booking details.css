@@ -1,0 +1,49 @@
+.Bookingh1 {
+  font-size: 48px;
+  margin: 20px 10px; }
+
+.Bookingh2 {
+  font-size: 32px;
+  margin: 20px 10px; }
+
+table {
+  border: 1px solid black;
+  margin: 20px 10px;
+  font-size: 20px; }
+
+.css-serial {
+  counter-reset: serial-number;
+  /* Set the serial number counter to 0 */ }
+
+.css-serial td:first-child:before {
+  counter-increment: serial-number;
+  /* Increment the serial number counter */
+  content: counter(serial-number);
+  /* Display the counter */ }
+
+th {
+  text-align: center;
+  padding: 20px 20px; }
+
+td {
+  text-align: left;
+  padding: 20px 20px; }
+
+.integral {
+  display: inline-block; }
+
+.Bookingh3 {
+  font-size: 20px; }
+
+input {
+  font-size: 10px; }
+
+.yesmodifyBtn {
+  text-align: center; }
+
+.yesmodifyBtn a {
+  text-decoration: none;
+  width: 20px;
+  padding: 10px 10px;
+  border: 1px solid black;
+  border-radius: 10px; }

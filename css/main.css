@@ -1,0 +1,943 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/*是從_resit.scss*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*RWD */
+/*是從_font.scss*/
+body {
+  font-size: 16px;
+  font-family: "微軟正黑體"; }
+
+/*是從_header.scss*/
+.header {
+  height: 250px; }
+  .header .nav {
+    height: 40px; }
+
+/*RWD */
+@media all and (min-width: 986px) {
+  .wrapper {
+    width: 100%;
+    height: 300px;
+    display: inline-block;
+    background-color: black; } }
+
+@media all and (max-width: 641px) and (min-width: 988px) {
+  .wrapper {
+    width: 60%;
+    background-color: green; } }
+
+@media all and (max-width: 640px) {
+  .wrapper {
+    width: 90%;
+    display: block;
+    background-color: blue; } }
+
+h1 {
+  color: green;
+  margin-left: 10px;
+  padding: 50px; }
+
+/*巢狀迴圈*/
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
+  a:after {
+    padding: 10px; }
+
+.box {
+  margin: 10px; }
+
+/*無值*/
+/*@mixin 名稱 (變數$a)
+mixin是將程式碼帶入到對應的class去，同時可帶入變數。*/
+.box {
+  margin: 10px;
+  padding: 10px; }
+
+/*有值*/
+.box1 {
+  margin: 20px; }
+
+/*加null，不怕少參數  $right:null*/
+/*可以加預設值  $bottom :30px*/
+.box2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 40px;
+  border: 1px  solid  red; }
+
+.box2 {
+  border: 1px  solid  red; }
+  .box2 box_inner {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 40px; }
+
+.box {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 40px; }
+
+.spec {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 40px; }
+
+.wrapper {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 40px; }
+
+.box_ex, .box, .box_333 {
+  width: 100px;
+  height: 200px; }
+
+/* extend則是藉由class合併，並吃到共通樣式，但沒辦法帶入變數。 */
+.box {
+  color: #666; }
+
+.box_333 {
+  color: #333; }
+
+/*SASS裡面可以使用函式，而且可以傳入值，這是一個很棒的設計，可以讓你省掉很多重複的CSS的撰寫*/
+.box_999 {
+  width: 100px;
+  height: 200px;
+  color: #999; }
+
+.box_222 {
+  width: 100px;
+  height: 200px;
+  color: #222; }
+
+/*佔位符號,不會出現在CSS上
+「%」後面加上自己命名要合併樣式的名稱*/
+.box_er, .box_et {
+  width: 100px;
+  color: red; }
+
+.box666 {
+  color: #666; }
+
+/*20171202*/
+/*變數從base/_var.scss*/
+.box {
+  margin: 30px;
+  padding: 30px; }
+
+/*相加*/
+.box11 {
+  margin: 50em;
+  width: 40px;
+  padding: 80px; }
+
+/*相減*/
+.box12 {
+  margin: 30em;
+  width: 10px;
+  padding: 20px; }
+
+/*相乘*/
+.box12 {
+  margin: 400em;
+  width: 1500px;
+  padding: 400em; }
+
+/*相除
+數值一定要括號
+變數不用括號*/
+.box13 {
+  font: 4px;
+  font: 0.6px; }
+
+/* 先乘後加*/
+.box14 {
+  font-size: 200px; }
+
+/* 顏色先乘後加*/
+.box15 {
+  background-color: #4bffff; }
+
+/* 數學
+ceil(x)	傳回等於或大於x的最小整數
+Round是四舍五入的
+floor傳回等於或大於x的最大整數*/
+.box16 {
+  width: 11;
+  width: 10;
+  width: 10; }
+
+/* 字型大小設定 用floor*/
+h1 {
+  font-size: 80px; }
+
+h2 {
+  font-size: 72px; }
+
+h3 {
+  font-size: 48px; }
+
+h4 {
+  font-size: 41px; }
+
+h5 {
+  font-size: 25px; }
+
+/*迴圈*/
+/*=======
+to 1~9*/
+/*=======有變數
+to 1~9 不包括10*/
+/*=======有變數
+through1~10*/
+/*函式結合for迴圈*/
+.col_1 {
+  width: 1px; }
+
+.col_2 {
+  width: 2px; }
+
+.col_3 {
+  width: 3px; }
+
+.col_4 {
+  width: 4px; }
+
+.col_5 {
+  width: 5px; }
+
+.col_6 {
+  width: 6px; }
+
+.col_7 {
+  width: 7px; }
+
+.col_8 {
+  width: 8px; }
+
+.col_9 {
+  width: 9px; }
+
+.col_10 {
+  width: 10px; }
+
+.col_11 {
+  width: 11px; }
+
+.col_12 {
+  width: 12px; }
+
+.col_13 {
+  width: 13px; }
+
+.col_14 {
+  width: 14px; }
+
+.col_15 {
+  width: 15px; }
+
+.col_16 {
+  width: 16px; }
+
+.col_17 {
+  width: 17px; }
+
+.col_18 {
+  width: 18px; }
+
+.col_19 {
+  width: 19px; }
+
+.col_20 {
+  width: 20px; }
+
+/*函式結合for迴圈2*/
+.names_1 {
+  width: 1px; }
+
+.names_2 {
+  width: 2px; }
+
+.names_3 {
+  width: 3px; }
+
+.names_4 {
+  width: 4px; }
+
+.names_5 {
+  width: 5px; }
+
+.names_6 {
+  width: 6px; }
+
+.names_7 {
+  width: 7px; }
+
+.names_8 {
+  width: 8px; }
+
+.names_9 {
+  width: 9px; }
+
+.names_10 {
+  width: 10px; }
+
+.names_11 {
+  width: 11px; }
+
+.names_12 {
+  width: 12px; }
+
+.names_13 {
+  width: 13px; }
+
+.names_14 {
+  width: 14px; }
+
+.names_15 {
+  width: 15px; }
+
+.names_16 {
+  width: 16px; }
+
+.names_17 {
+  width: 17px; }
+
+.names_18 {
+  width: 18px; }
+
+.names_19 {
+  width: 19px; }
+
+.names_20 {
+  width: 20px; }
+
+.names_21 {
+  width: 21px; }
+
+.names_22 {
+  width: 22px; }
+
+.names_23 {
+  width: 23px; }
+
+.names_24 {
+  width: 24px; }
+
+.names_25 {
+  width: 25px; }
+
+.names_26 {
+  width: 26px; }
+
+.names_27 {
+  width: 27px; }
+
+.names_28 {
+  width: 28px; }
+
+.names_29 {
+  width: 29px; }
+
+.names_30 {
+  width: 30px; }
+
+.names_31 {
+  width: 31px; }
+
+.names_32 {
+  width: 32px; }
+
+.names_33 {
+  width: 33px; }
+
+.names_34 {
+  width: 34px; }
+
+.names_35 {
+  width: 35px; }
+
+.names_36 {
+  width: 36px; }
+
+.names_37 {
+  width: 37px; }
+
+.names_38 {
+  width: 38px; }
+
+.names_39 {
+  width: 39px; }
+
+.names_40 {
+  width: 40px; }
+
+.names_41 {
+  width: 41px; }
+
+.names_42 {
+  width: 42px; }
+
+.names_43 {
+  width: 43px; }
+
+.names_44 {
+  width: 44px; }
+
+.names_45 {
+  width: 45px; }
+
+.names_46 {
+  width: 46px; }
+
+.names_47 {
+  width: 47px; }
+
+.names_48 {
+  width: 48px; }
+
+.names_49 {
+  width: 49px; }
+
+.names_50 {
+  width: 50px; }
+
+/*push-left*/
+/*@include push-left(100);*/
+/*right */
+/*@include push(right,50);*/
+/*top*/
+.margin-top-1 {
+  margin-top: 1px; }
+
+.margin-top-2 {
+  margin-top: 2px; }
+
+.margin-top-3 {
+  margin-top: 3px; }
+
+.margin-top-4 {
+  margin-top: 4px; }
+
+.margin-top-5 {
+  margin-top: 5px; }
+
+.margin-top-6 {
+  margin-top: 6px; }
+
+.margin-top-7 {
+  margin-top: 7px; }
+
+.margin-top-8 {
+  margin-top: 8px; }
+
+.margin-top-9 {
+  margin-top: 9px; }
+
+.margin-top-10 {
+  margin-top: 10px; }
+
+.margin-top-11 {
+  margin-top: 11px; }
+
+.margin-top-12 {
+  margin-top: 12px; }
+
+.margin-top-13 {
+  margin-top: 13px; }
+
+.margin-top-14 {
+  margin-top: 14px; }
+
+.margin-top-15 {
+  margin-top: 15px; }
+
+.margin-top-16 {
+  margin-top: 16px; }
+
+.margin-top-17 {
+  margin-top: 17px; }
+
+.margin-top-18 {
+  margin-top: 18px; }
+
+.margin-top-19 {
+  margin-top: 19px; }
+
+.margin-top-20 {
+  margin-top: 20px; }
+
+/*if*/
+.theme_blue {
+  color: blue; }
+
+/*使用函式*/
+/*一般寫法*/
+.theme_yellow {
+  color: yellow; }
+
+/*有加content才有此寫法*/
+.theme_other {
+  margin: 10px;
+  padding: 10px;
+  color: green; }
+
+/*each*/
+.al {
+  background-image: url("img/filename.jpg");
+  width: 100%; }
+
+.a2 {
+  background-image: url("img/filename.jpg");
+  width: 100%; }
+
+.a3 {
+  background-image: url("img/filename.jpg");
+  width: 100%; }
+
+.a4 {
+  background-image: url("img/filename.jpg");
+  width: 100%; }
+
+.a5 {
+  background-image: url("img/filename.jpg");
+  width: 100%; }
+
+/* mixin each*/
+.al {
+  background-image: url("img/filename.jpg");
+  width: 100%; }
+
+.a2 {
+  background-image: url("img/filename.jpg");
+  width: 100%; }
+
+.a3 {
+  background-image: url("img/filename.jpg");
+  width: 100%; }
+
+.a4 {
+  background-image: url("img/filename.jpg");
+  width: 100%; }
+
+/*each title*/
+h1 {
+  font-size: 4em; }
+
+h2 {
+  font-size: 3.5em; }
+
+h3 {
+  font-size: 3em; }
+
+h4 {
+  font-size: 2.3em; }
+
+/*grid */
+/*要切的幾格*/
+.col-md-1 {
+  /*100% /要切的幾格 * 需要幾份*/
+  width: 8.33333%; }
+
+.col-md-2 {
+  /*100% /要切的幾格 * 需要幾份*/
+  width: 16.66667%; }
+
+.col-md-3 {
+  /*100% /要切的幾格 * 需要幾份*/
+  width: 25%; }
+
+.col-md-4 {
+  /*100% /要切的幾格 * 需要幾份*/
+  width: 33.33333%; }
+
+.col-md-5 {
+  /*100% /要切的幾格 * 需要幾份*/
+  width: 41.66667%; }
+
+.col-md-6 {
+  /*100% /要切的幾格 * 需要幾份*/
+  width: 50%; }
+
+.col-md-7 {
+  /*100% /要切的幾格 * 需要幾份*/
+  width: 58.33333%; }
+
+.col-md-8 {
+  /*100% /要切的幾格 * 需要幾份*/
+  width: 66.66667%; }
+
+.col-md-9 {
+  /*100% /要切的幾格 * 需要幾份*/
+  width: 75%; }
+
+.col-md-10 {
+  /*100% /要切的幾格 * 需要幾份*/
+  width: 83.33333%; }
+
+.col-md-11 {
+  /*100% /要切的幾格 * 需要幾份*/
+  width: 91.66667%; }
+
+.col-md-12 {
+  /*100% /要切的幾格 * 需要幾份*/
+  width: 100%; }
+
+/*漸層 不能在同一層，後面會蓋掉前面 變亮*/
+.box_color {
+  background-color: #032600;
+  height: 50px;
+  width: 300px; }
+
+.color_lighten_1 {
+  margin: auto;
+  background-color: #132d72;
+  height: 50px;
+  width: 300px; }
+
+.color_lighten_2 {
+  margin: auto;
+  background-color: #15327f;
+  height: 50px;
+  width: 300px; }
+
+.color_lighten_3 {
+  margin: auto;
+  background-color: #18388c;
+  height: 50px;
+  width: 300px; }
+
+.color_lighten_4 {
+  margin: auto;
+  background-color: #1a3d99;
+  height: 50px;
+  width: 300px; }
+
+.color_lighten_5 {
+  margin: auto;
+  background-color: #1c42a6;
+  height: 50px;
+  width: 300px; }
+
+.color_lighten_6 {
+  margin: auto;
+  background-color: #1e47b4;
+  height: 50px;
+  width: 300px; }
+
+.color_lighten_7 {
+  margin: auto;
+  background-color: #204cc1;
+  height: 50px;
+  width: 300px; }
+
+.color_lighten_8 {
+  margin: auto;
+  background-color: #2351ce;
+  height: 50px;
+  width: 300px; }
+
+.color_lighten_9 {
+  margin: auto;
+  background-color: #2557da;
+  height: 50px;
+  width: 300px; }
+
+.color_lighten_10 {
+  margin: auto;
+  background-color: #3261dd;
+  height: 50px;
+  width: 300px; }
+
+/*漸層 變暗*/
+.box_color {
+  background-color: #032600;
+  height: 50px;
+  width: 300px; }
+
+.color_darken_1 {
+  margin: auto;
+  background-color: #faadad;
+  height: 50px;
+  width: 300px; }
+
+.color_darken_2 {
+  margin: auto;
+  background-color: #f99e9e;
+  height: 50px;
+  width: 300px; }
+
+.color_darken_3 {
+  margin: auto;
+  background-color: #f89090;
+  height: 50px;
+  width: 300px; }
+
+.color_darken_4 {
+  margin: auto;
+  background-color: #f88181;
+  height: 50px;
+  width: 300px; }
+
+.color_darken_5 {
+  margin: auto;
+  background-color: #f77373;
+  height: 50px;
+  width: 300px; }
+
+.color_darken_6 {
+  margin: auto;
+  background-color: #f66464;
+  height: 50px;
+  width: 300px; }
+
+.color_darken_7 {
+  margin: auto;
+  background-color: #f55656;
+  height: 50px;
+  width: 300px; }
+
+.color_darken_8 {
+  margin: auto;
+  background-color: #f44747;
+  height: 50px;
+  width: 300px; }
+
+.color_darken_9 {
+  margin: auto;
+  background-color: #f33939;
+  height: 50px;
+  width: 300px; }
+
+.color_darken_10 {
+  margin: auto;
+  background-color: #f32b2b;
+  height: 50px;
+  width: 300px; }
+
+/*漸層 if*/
+.color_darken_1 {
+  margin: auto;
+  background-color: #76ed32;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_2 {
+  margin: auto;
+  background-color: #67eb1a;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_3 {
+  margin: auto;
+  background-color: #5cd813;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_4 {
+  margin: auto;
+  background-color: #52c111;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_5 {
+  margin: auto;
+  background-color: #48aa0f;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_6 {
+  margin: auto;
+  background-color: #3e920d;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_7 {
+  margin: auto;
+  background-color: #347b0b;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_8 {
+  margin: auto;
+  background-color: #2a6309;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_9 {
+  margin: auto;
+  background-color: #204c07;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_10 {
+  margin: auto;
+  background-color: #163405;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_11 {
+  margin: auto;
+  background-color: #0c1d03;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_12 {
+  margin: auto;
+  background-color: #020600;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_13 {
+  margin: auto;
+  background-color: black;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_14 {
+  margin: auto;
+  background-color: black;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_15 {
+  margin: auto;
+  background-color: black;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_16 {
+  margin: auto;
+  background-color: black;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_17 {
+  margin: auto;
+  background-color: black;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_18 {
+  margin: auto;
+  background-color: black;
+  height: 30px;
+  width: 400px; }
+
+.color_darken_19 {
+  margin: auto;
+  background-color: black;
+  height: 30px;
+  width: 400px; }
+
+/* layout 設計 float*/
+.box1 {
+  float: left;
+  width: 400px;
+  height: 40px;
+  display: inline-block; }
+  .box1:after {
+    content: '';
+    clear: both; }
+
+.space {
+  float: right;
+  width: 400px;
+  height: 40px;
+  display: inline-block; }
+  .space:after {
+    content: '';
+    clear: both; }
+
+/*float*/
+/*float_1*/
+.dir {
+  float: left;
+  /* 抓取寬和高 */
+  height: 30px;
+  width: 400px;
+  min-height: 1px;
+  display: inline-block;
+  background-color: blue; }
+  .dir:after {
+    content: '';
+    clear: both; }
+
+/*float_2*/
+/*map 陣列*/
+.boxmap {
+  margin: 10px; }
+
+.boxss {
+  padding: 5;
+  margin: 40; }
+
+/*rwd each寫法*/
+@media all and (min-width: 480px) {
+  .box {
+    width: 60%;
+    background-color: green; } }
+
+@media all and (min-width: 720px) {
+  .box {
+    width: 80%;
+    background-color: blue; } }
+
+@media all and (min-width: 1360px) {
+  .box {
+    width: 100%;
+    background-color: black; } }

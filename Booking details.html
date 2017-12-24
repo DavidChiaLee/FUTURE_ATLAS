@@ -13,54 +13,54 @@
     <table>
         <tr>
             <td>帳號:leon Wang </td>
-            <td>Email:Ting Wang@gmail.com</td>
+            <td>Email:leon Wang@gmail.com</td>
             <td>積分:1000元</td>
         </tr>
     </table>
     <h2 class="Bookingh2">購票明細</h2>
-     <!-- css-serial:自動編號 -->
+    <!-- css-serial:自動編號 -->
     <!-- <table class="css-serial"> -->
     <table>
-        <tr>
-            <th>序號</th>
-            <th>節目名稱</th>
-            <th>場次</th>
-            <th>節目日期</th>
-            <th>數量</th>
-            <th>單價</th>
-            <th>小記</th>
+        <tr style="font-weight: bold;">
+            <td>序號</td>
+            <td>節目名稱</td>
+            <td>節目日期</td>
+            <td>場次</td>
+            <td>數量</td>
+            <td>單價</td>
+            <td>小記</td>
         </tr>
         <tr>
             <td>1</td>
-            <td>尋找星生命</td>
-            <td>10:00</td>
-            <td>2018年1月2日</td>
-            <td>1</td>
-            <td>500</td>
-            <td>500</td>
+            <td id="program_name"></td>
+            <td id="Time_date"></td>
+            <td id="Time_Event"></td>
+            <td id="unused_ ticket"></td>
+            <td>500元</td>
+            <td id="unpoints_total"></td>
         </tr>
-        <tr>
-            <td>2</td>
-            <td>恐龍末日</td>
-            <td>11:00</td>
-            <td>2018年1月3日</td>
-            <td>1</td>
-            <td>500</td>
-            <td>500</td>
-        </tr>
+        <!--  <tr>
+                <td>2</td>
+                <td>恐龍末日</td>
+                <td >11:00</td>
+                <td>2018年1月3日</td>
+                <td>1</td>
+                <td>500</td>
+                <td>500</td>
+            </tr> -->
         <tr>
             <td></td>
             <td></td>
             <td colspan="2">
-                <input type="radio" name="Scorepoints" value="nouser" checked>不使用積分抵扣消費額
+                <input type="radio" name="Scorepoints" value="0" onchange="Userpoints()">不使用積分抵扣消費額
                 <br>
-                <input type="radio" name="Scorepoints" value="user">使用積分抵扣消費額</td>
-            <td colspan="2">
-                <input type="text" name="Scorenumber" value="500" size=10>
+                <input type="radio" name="Scorepoints" value="1" checked onchange="Userpoints()">使用積分抵扣消費額</td>
+            <td colspan="2" style="padding-top: 40px;">
+                <input type="text" id="Scorenumber" value="500" size=10 style="font-size:16px;" onchange="changeScoreNumber()">
             </td>
-            <td>-500元</td>
+            <td style="padding-top: 40px;" id="integral"></td>
         </tr>
-
+    
         <tr>
             <td></td>
             <td></td>
@@ -68,39 +68,14 @@
             <td></td>
             <td></td>
             <td>總計:</td>
-            <td>500元</td>
+            <td id="total">
+            </td>
         </tr>
-       
+    
     </table>
-    <div class="integral">
-        
-        <!-- <table class="nounderline">
-            <!-- <h3 class="Bookingh3">使用積分</h3> -->
-            <!-- <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td style="display:block;">
-                    <input type="radio" name="Scorepoints" value="nouser" checked>不使用積分抵扣消費額<br>
-                    <input type="radio" name="Scorepoints" value="user">使用積分抵扣消費額 
-                     &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Scorenumber" value="500"> 
-                     &nbsp;&nbsp;&nbsp;&nbsp;-500元
-                </td>
-            </tr>
-            <tr >
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td style="text-align:right;">總計:500元</td>
-            </tr>
-        </table> -->
-    </div> 
-    <hr  size="2px" align="center" width="95%" >
-
+    
+    <hr size="2px" align="center" width="95%">
+    
     <h2 class="Bookingh2">輸入信用卡資訊</h2>
     <table>
         <tr>
@@ -116,21 +91,85 @@
             <td>到期日</td>
             <td>
                 <input type="text" size=2> /
-                <input type="text" size=2> 
+                <input type="text" size=2>
             </td>
             <td>驗證碼</td>
             <td>
-                 <!-- size是設定input大小 -->
+                <!-- size是設定input大小 -->
                 <input type="text" size=2>
-            </td> 
+            </td>
         </tr>
     </table>
-    
-
     <div class="yesmodifyBtn">
         <a href="#">修改</a>
         <a href="#">確認購買</a>
-    </div>   
+    </div>
+    <script type="text/javascript">
+        var storage = sessionStorage;
+
+        //從sessionStorage，取出節目名稱
+        var programName = storage.getItem('programName');
+        document.getElementById('program_name').innerText = programName;
+
+        //從sessionStorage，取出節目日期
+        var programDate = storage.getItem('programDate');
+        document.getElementById('Time_date').innerText = programDate;
+
+        //從sessionStorage，取出節目場次
+        var programTime = storage.getItem('programTime');
+        document.getElementById('Time_Event').innerText = programTime;
+
+        //從sessionStorage，取出數量
+        var theater_quantity = storage.getItem('theater_quantity');
+        document.getElementById('unused_ ticket').innerText = theater_quantity;
+
+        //從sessionStorage，取出小計
+        var theater_total = storage.getItem('theater_total');
+        document.getElementById('unpoints_total').innerText = theater_total + "元";
+
+        //取出使用者輸入的積分
+         var Scorenumber = Number(document.getElementById('Scorenumber').value);
+
+        //id是integral的欄位之預設值
+        document.getElementById('integral').innerHTML = "-" + Scorenumber + "元";
+
+        //小計減掉積分,應付金額
+        total = theater_total - Scorenumber;
+        document.getElementById('total').innerHTML = total + "元";
+
+        //判斷是否使用積分
+        function Userpoints() {
+            var Scorepoints = document.querySelector('input[name="Scorepoints"]:checked').value;
+            if (Scorepoints == 1) {
+                //關閉使用者可以輸入的欄位(id是userpoints)
+                document.getElementById('Scorenumber').disabled = false;
+                var Scorenumber = Number(document.getElementById('Scorenumber').value);
+                //id是integral的欄位之預設值
+                document.getElementById('integral').innerHTML = "-" + Scorenumber + "元";
+            } else {
+                //讓使用者不能輸入
+                document.getElementById('Scorenumber').value = 0;
+                //直接改成0元
+                document.getElementById('integral').innerHTML = 0 + "元";
+                //關閉使用者可以輸入的欄位(id是userpoints)
+                document.getElementById('Scorenumber').disabled = true;
+                }
+            }
+
+        //扣掉積分
+        function changeScoreNumber() {
+            var theater_total = storage.getItem('theater_total');
+
+            var Scorenumber = Number(document.getElementById('Scorenumber').value);
+
+            //值要連動到id是integral的欄位
+            document.getElementById('integral').innerHTML = "-" + Scorenumber + "元";
+
+            //小計減掉積分,應付金額
+            total = theater_total - Scorenumber;
+             document.getElementById('total').innerHTML = total + "元";
+        }
+    </script> 
     
 </body>
 </html>
