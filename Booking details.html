@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Booking details</title>
+    <link rel="stylesheet" type="text/css" href="css/Booking details.css">
+</head>
+<body>
+    <h1 class="Bookingh1">訂票明細</h1>
+    <h2 class="Bookingh2">購票資訊</h2>
+    <table>
+        <tr>
+            <td>帳號:leon Wang </td>
+            <td>Email:Ting Wang@gmail.com</td>
+            <td>積分:1000元</td>
+        </tr>
+    </table>
+    <h2 class="Bookingh2">購票明細</h2>
+     <!-- css-serial:自動編號 -->
+    <!-- <table class="css-serial"> -->
+    <table>
+        <tr>
+            <th>序號</th>
+            <th>節目名稱</th>
+            <th>場次</th>
+            <th>節目日期</th>
+            <th>數量</th>
+            <th>單價</th>
+            <th>小記</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>尋找星生命</td>
+            <td>10:00</td>
+            <td>2018年1月2日</td>
+            <td>1</td>
+            <td>500</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>恐龍末日</td>
+            <td>11:00</td>
+            <td>2018年1月3日</td>
+            <td>1</td>
+            <td>500</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td colspan="2">
+                <input type="radio" name="Scorepoints" value="nouser" checked>不使用積分抵扣消費額
+                <br>
+                <input type="radio" name="Scorepoints" value="user">使用積分抵扣消費額</td>
+            <td colspan="2">
+                <input type="text" name="Scorenumber" value="500" size=10>
+            </td>
+            <td>-500元</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>總計:</td>
+            <td>500元</td>
+        </tr>
+       
+    </table>
+    <div class="integral">
+        
+        <!-- <table class="nounderline">
+            <!-- <h3 class="Bookingh3">使用積分</h3> -->
+            <!-- <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="display:block;">
+                    <input type="radio" name="Scorepoints" value="nouser" checked>不使用積分抵扣消費額<br>
+                    <input type="radio" name="Scorepoints" value="user">使用積分抵扣消費額 
+                     &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Scorenumber" value="500"> 
+                     &nbsp;&nbsp;&nbsp;&nbsp;-500元
+                </td>
+            </tr>
+            <tr >
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="text-align:right;">總計:500元</td>
+            </tr>
+        </table> -->
+    </div> 
+    <hr  size="2px" align="center" width="95%" >
+
+    <h2 class="Bookingh2">輸入信用卡資訊</h2>
+    <table>
+        <tr>
+            <td>信用卡號碼</td>
+            <td>
+                <input type="text" size=2> -
+                <input type="text" size=2> -
+                <input type="text" size=2> -
+                <input type="text" size=2>
+            </td>
+        </tr>
+        <tr>
+            <td>到期日</td>
+            <td>
+                <input type="text" size=2> /
+                <input type="text" size=2> 
+            </td>
+            <td>驗證碼</td>
+            <td>
+                 <!-- size是設定input大小 -->
+                <input type="text" size=2>
+            </td> 
+        </tr>
+    </table>
+    
+
+    <div class="yesmodifyBtn">
+        <a href="#">修改</a>
+        <a href="#">確認購買</a>
+    </div>   
+    
+</body>
+</html>
