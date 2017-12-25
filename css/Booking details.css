@@ -1,10 +1,12 @@
 .Bookingh1 {
   font-size: 48px;
-  margin: 20px 10px; }
+  margin: 20px 10px;
+  color: #42d9ff; }
 
 .Bookingh2 {
   font-size: 32px;
-  margin: 20px 10px; }
+  margin: 20px 10px;
+  color: #42d9ff; }
 
 table {
   border: 1px solid black;
@@ -44,6 +46,6 @@ input {
 .yesmodifyBtn a {
   text-decoration: none;
   width: 20px;
-  padding: 10px 10px;
-  border: 1px solid black;
-  border-radius: 10px; }
+  color: white;
+  background-color: #FFC116;
+  padding: 10px 10px; }

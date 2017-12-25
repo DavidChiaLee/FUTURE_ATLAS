@@ -1,5 +1,5 @@
 h2 {
-  color: blue;
+  color: #42d9ff;
   text-align: center; }
 
 form {
@@ -20,9 +20,9 @@ td {
 
 a {
   color: white;
-  background-color: blue;
+  background-color: #FFC116;
   padding: 5px 10px;
   margin: 15px;
-  /*border: 1px solid red;*/
-  border-radius: 30px;
+  /*border: 1px solid red;
+		border-radius: 30px;*/
   text-decoration: none; }
