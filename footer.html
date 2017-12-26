@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>footer</title>
+    <style>
+        body{
+            background-color: #000; 
+        }
+        footer{
+            width: 100%;
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+            padding: 2% 0;
+        }
+        .info{
+            display: flex;
+            /* row	默认值。灵活的项目将水平显示，正如一个行一样。 */
+            flex-direction: row;
+            /* justify-content 決定了內容元素與整個 Flexbox 的「水平對齊」位置
+            flex 容器起始邊緣和第一個 flex 項之間的間距和每個相鄰 flex 項之間的間距是相等。*/
+            justify-content: space-evenly;
+            text-align: left;
+        }
+        footer .container .info div {
+            width: 23%;
+            /* margin:10px 10px; */
+        }
+        footer .container .info h2 {
+            width: 100%;
+            font-size: 1em;
+            text-align: center;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 5px;
+            letter-spacing: 5px;
+        }
+        footer .container .info p{
+            display: inline-block;
+            font-size: 0.8em;
+            /*  line-height: 18px;
+            padding-top: 10px;
+            margin: 0; */
+        }
+        footer .container .info a{
+            display: block;
+            text-decoration: none;
+            color:white;
+            margin: 5px 0;
+            text-align:left;
+        }
+        footer .container .info p span {
+            display: block;
+            margin: 5px 0;
+            letter-spacing: 2px;
+        }
+        footer .container .copyright {
+            text-align: center;
+            margin: 20px 0px;
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="container">
+            <div class="info">
+                <div class="menuinfo">
+                    <h2>導覽</h2>
+                    <p>
+                        <a href="#">設施</a>
+                        <a href="#">劇場</a>
+                        <a href="#">活動</a>
+                        <a href="#">留言板</a>
+                    </p>
+                </div>
+                <div class="contactinfo">
+                    <h2>聯絡我們</h2>
+                    <p>
+                        <span>地 址:桃園市中壢區中央路100號</span><br>
+                        <span>電 話:03-6666661</span><br>
+                        <span>e-mail:FUTUREATLAS@gmail.com</span><br>
+                        <span>營業時間:10:00~18:00</span>
+                    </p>
+                </div>
+                <div class="contactinfo">
+                    <h2>合作旅行社</h2>
+                    <p>
+                        <a href="#">西南旅行社</a>
+                        <a href="#">母獅旅行社</a>
+                        <a href="#">雪碧旅行社</a>
+                        <a href="#">星球旅行社</a>
+                    </p>
+                </div>
+                
+            </div>
+            <div class="copyright">
+                &copy; 2018 FUTURE ATLAS , All Rights Reserved
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
