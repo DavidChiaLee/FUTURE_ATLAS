@@ -1,33 +1,47 @@
 @charset "UTF-8";
-@import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
-/*
-	Hielo by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
 */
-/* Reset */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+/*是從_resit.scss*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 90%;
+  font-size: 100%;
   font: inherit;
   vertical-align: baseline; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
   display: block; }
 
 body {
   line-height: 1; }
 
 ol, ul {
-  list-style: none; }
+  list-style: none;
+  margin: 0;
+  padding: 0; }
 
 blockquote, q {
   quotes: none; }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before, blockquote:after,
+q:before, q:after {
   content: '';
   content: none; }
 
@@ -35,709 +49,294 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-body {
-  -webkit-text-size-adjust: none; }
-
-/* Banner */
-.body {
-  font-family: "微軟正黑體", Arial ,sans-serif; }
-
-.banner {
-  background-color: #8a4680;
-  color: #e2d1df;
-  padding: 8em 0;
-  position: relative; }
-
-.banner input, .banner select, .banner textarea {
-  color: #ffffff; }
-
-.banner a {
-  color: #ffffff; }
-
-.banner strong, .banner b {
-  color: #ffffff; }
-
-.banner h1, .banner h2, .banner h3, .banner h4, .banner h5, .banner h6 {
-  color: #ffffff; }
-
-.banner blockquote {
-  border-left-color: rgba(255, 255, 255, 0.25); }
-
-.banner code {
-  background: rgba(255, 255, 255, 0.075);
-  border-color: rgba(255, 255, 255, 0.25); }
-
-.banner hr {
-  border-bottom-color: rgba(255, 255, 255, 0.25); }
-
-.banner.full {
-  padding: 0;
-  min-height: 100vh;
-  height: 100vh !important; }
-
-.banner.half {
-  padding: 0;
-  min-height: 50vh;
-  height: 50vh !important; }
-
-.banner:after {
-  -moz-pointer-events: none;
-  -webkit-pointer-events: none;
-  -ms-pointer-events: none;
-  pointer-events: none;
-  -moz-transition: opacity 1.5s ease-in-out, visibility 1.5s;
-  -webkit-transition: opacity 1.5s ease-in-out, visibility 1.5s;
-  -ms-transition: opacity 1.5s ease-in-out, visibility 1.5s;
-  transition: opacity 1.5s ease-in-out, visibility 1.5s;
-  background: #000000;
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  visibility: hidden;
+/*-----header-----*/
+.nav {
   width: 100%;
-  z-index: 2; }
+  position: fixed;
+  height: 13%;
+  text-align: center;
+  padding: 0.6%;
+  margin-top: 25px;
+  top: 0;
+  z-index: 1000; }
 
-.banner .indicators {
-  bottom: 1.5em;
-  left: 0;
-  list-style: none;
+.logo {
+  display: inline-block;
+  width: 15%;
+  min-width: 200px;
   margin: 0;
-  padding: 0;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  z-index: 2; }
-
-.banner .indicators li {
-  cursor: pointer;
-  display: inline-block;
-  height: 2em;
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-  text-indent: 2em;
-  width: 2em; }
-
-.banner .indicators li:before {
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 100%;
-  content: '';
-  display: inline-block;
-  height: 0.8em;
-  left: 50%;
-  margin: -0.4em 0 0 -0.4em;
-  position: absolute;
-  text-indent: 0;
-  top: 50%;
-  width: 0.8em; }
-
-.banner .indicators li.visible:before {
-  background: #fff; }
-
-.banner > article {
-  -moz-transition: opacity 1.5s ease, visibility 1.5s;
-  -webkit-transition: opacity 1.5s ease, visibility 1.5s;
-  -ms-transition: opacity 1.5s ease, visibility 1.5s;
-  transition: opacity 1.5s ease, visibility 1.5s;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  visibility: hidden;
-  width: 100%;
-  z-index: 0; }
-
-.banner > article:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
   vertical-align: middle; }
 
-.banner > article:after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #000;
-  opacity: 0.35; }
-
-.banner > article .inner {
-  position: relative;
+.ul_left,
+.ul_right,
+.ul_left li,
+.ul_right li {
   display: inline-block;
   vertical-align: middle;
-  z-index: 1; }
+  margin: 0 20px 0 20px;
+  font-family: "微軟正黑體"; }
 
-.banner > article .inner > :last-child {
-  margin-bottom: 0; }
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 5%;
+  text-align: right;
+  padding: 0.2%;
+  z-index: 999; }
 
-.banner > article .inner {
-  font-size: 7rem;
-  /*font-size: 32px;*/
-  margin-bottom: 0;
-  color: #FFF;
-  font-weight: 300; }
+.header .ul_top {
+  margin: 15px; }
 
-.banner > article h2:after {
-  display: none; }
+.header .ul_top li {
+  display: inline-block;
+  margin: 0 8px 0 8px;
+  font-family: "微軟正黑體"; }
 
-.banner > article p {
-  color: rgba(255, 255, 255, 0.65);
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 300;
-  margin: 0;
-  padding-bottom: 1.75rem;
-  letter-spacing: .25rem; }
+.header .ul_top li a {
+  text-decoration: none;
+  color: white; }
 
-.banner > article p:after {
-  content: '';
-  position: absolute;
-  margin: auto;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.nav .ul_left li a {
+  text-decoration: none;
+  color: white; }
+
+.nav .ul_right li a {
+  text-decoration: none;
+  color: white; }
+
+/*-----header end-----*/
+* {
+  margin: 0px;
+  padding: 0px;
+  /*outline: 1px solid red;*/ }
+
+body {
+  font-family: "微軟正黑體", Arial, sans-serif;
+  background-color: black;
+  background-image: url("../img/Galaxy_1.jpg");
+  background-size: cover; }
+
+.Menu {
   width: 50%;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.65); }
+  position: relative;
+  top: 160px;
+  left: 310px; }
 
-.banner > article a {
-  color: #FFF;
+.progressinfoMenu {
+  background-color: #ffc116;
+  width: 200px;
+  height: 40px;
+  background: linear-gradient(-45deg, transparent 40px, #ffc116 0%) bottom right, linear-gradient(130deg, transparent 0px, #ffc116 0%) bottom left, linear-gradient(-135deg, transparent 40px, #ffc116 0%) top right, linear-gradient(135deg, transparent 0px, #ffc116 0%) top left;
+  /*-45度，反方向堆回來，那塊顏色就消失*/
+  background-size: 50% 50%;
+  /*顏色各占一 半*/
+  background-repeat: no-repeat; }
+
+.progressinfoMenu a {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  color: white;
+  padding: 7px 0px;
   text-decoration: none; }
 
-.banner > article img {
-  display: none; }
+.buyticketMenu {
+  margin-top: 8px;
+  background-color: #ffc116;
+  width: 200px;
+  height: 40px;
+  background: linear-gradient(-45deg, transparent 40px, #ffc116 0%) bottom right, linear-gradient(130deg, transparent 0px, #ffc116 0%) bottom left, linear-gradient(-135deg, transparent 40px, #ffc116 0%) top right, linear-gradient(135deg, transparent 0px, #ffc116 0%) top left;
+  /*-45度，反方向堆回來，那塊顏色就消失*/
+  background-size: 50% 50%;
+  /*顏色各占一 半*/
+  background-repeat: no-repeat; }
 
-.banner > article.visible {
-  opacity: 1;
-  visibility: visible; }
-
-.banner > article.top {
-  z-index: 1; }
-
-.banner > article.instant {
-  -moz-transition: none !important;
-  -webkit-transition: none !important;
-  -ms-transition: none !important;
-  transition: none !important; }
-
-body.is-loading .banner:after {
-  opacity: 1.0;
-  visibility: visible; }
-
-@media screen and (max-width: 1280px) {
-  .banner.full {
-    padding: 0;
-    min-height: 75vh;
-    height: 75vh !important; } }
-
-@media screen and (max-width: 980px) {
-  .banner.full {
-    padding: 0;
-    min-height: 50vh;
-    height: 50vh !important; }
-  .banner > article {
-    background-attachment: scroll; } }
-
-@media screen and (max-width: 736px) {
-  .banner > article .inner {
-    width: 90%; }
-  .banner > article p {
-    margin-bottom: 1rem; }
-  .banner > article h2 {
-    font-size: 4em; } }
-
-body.is-mobile .banner > article {
-  background-attachment: scroll; }
-
-/*購買票劵*/
-.buyticket {
-  margin: 100px 30px;
-  text-align: center; }
-
-/*.progressone{
-        
-    }*/
-.progressone h2 {
-  display: inline-block;
-  font-size: 32px;
-  margin: 10px 20px; }
-
-a {
-  display: inline-block;
-  font-size: 32px;
+.buyticketMenu a {
+  position: relative;
+  top: 11px;
+  left: 20px;
+  color: white;
+  padding: 8px 0px;
   text-decoration: none; }
 
-.progresstwo h2 {
-  display: inline-block;
-  font-size: 32px;
-  /*margin:10px 20px;*/ }
+/*topright*/
+.topright {
+  width: 50%;
+  position: relative;
+  top: 60px;
+  left: 550px; }
 
-/*尋找星生命介紹*/
-.progressoneinfo {
-  /*margin-left:4.5%;*/
-  margin: 80px 4.5%;
-  width: 600px; }
-
-.progressoneinfo h2 {
+.topright .Menutitle {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+  color: white;
   font-size: 32px; }
 
-.progressoneinfo p {
-  margin-top: 30px;
-  font-size: 16px;
-  line-height: 30px;
-  letter-spacing: 1.2px; }
+/*畫線*/
+.toprightcanvas {
+  position: absolute;
+  top: 10px;
+  left: 230px; }
 
-/*尋找星生命照片*/
-.progressonepicture {
-  text-align: right; }
+.topright hr {
+  position: absolute;
+  top: 20px;
+  left: 300px; }
 
-.progressonepicture img {
-  margin-right: 4.5%;
-  width: 600px; }
+.topright .hrRotate {
+  position: absolute;
+  top: 56px;
+  left: 387px;
+  transform: rotate(45deg); }
 
-/*恐龍末日介紹*/
-.progresstwoinfo {
-  margin: 80px 4.5%;
-  width: 600px; }
+.topright .hrRotate2 {
+  position: absolute;
+  top: 143px;
+  left: 424px;
+  transform: rotate(90deg); }
 
-.progresstwoinfo h2 {
+/*星球 */
+.topright .planet {
+  position: absolute;
+  top: 200px;
+  left: 230px; }
+
+/*太空人*/
+.topright .spaceman {
+  position: absolute;
+  top: 250px;
+  left: 240px;
+  transform: rotate(35deg); }
+
+/*節目1*/
+.programone {
+  width: 500px;
+  position: relative;
+  top: 300px;
+  left: 300px; }
+
+.programone .programonetitle {
+  width: 300px;
+  color: white;
   font-size: 32px; }
 
-.progresstwoinfo p {
-  margin-top: 30px;
+.programone .programoneHr {
+  position: absolute;
+  top: 6%;
+  left: 1%;
+  width: 7px;
+  height: 100%;
+  /*border: 1px #7bd3f8 solid;*/
+  /*border-radius: 10px;*/
+  background-color: #35ffba; }
+
+.programonecontent {
   font-size: 16px;
-  line-height: 30px;
-  letter-spacing: 1.2px; }
+  padding: 20px;
+  line-height: 20px;
+  letter-spacing: 1.2px;
+  width: 300px;
+  color: white; }
 
-/*恐龍末日照片*/
-.progresstwopicture {
-  text-align: right; }
+.programone .programoneHr2 {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 3px;
+  height: 50%;
+  /*border: 1px #7bd3f8 solid;*/
+  /*border-radius: 10px;*/
+  background-color: #35ffba; }
 
-.progresstwopicture img {
-  margin-right: 4.5%;
-  width: 600px; }
+.programone .spaceship {
+  position: relative;
+  top: 220px;
+  left: -150px; }
 
-/*劇場音響照片*/
-/*.soundpicture{
-      margin:80px  4.5% ;
-      float: left;
-    }
-    .soundpicture img{
-      width:600px;
-    }*/
-/*劇場音響介紹*/
-/*.soundinfo{
-      margin:30px  4.5% ;
-      width:600px;
-      float: right;
-    }
-    .soundinfo h2{
-      font-size: 32px;
-    }
-    .soundinfo p{
-      margin-top: 30px;
-      font-size: 16px;
-      line-height:30px;
-      letter-spacing:1.2px;
-    }*/
-/*節目介紹*/
-/*.progressinfo{
-      width: 100%;
-      margin:0 auto;
-      margin-top:60px;
-      margin-bottom:60px;
-    }
-    .routecon{
-      width:100%;
-      height:auto;
-      margin: auto;
-      text-align:center;
-     
-    }
-    .route{
-      width:80%;
-      max-width:1200px;
-      display: inline-block;
-      margin-top:20px;
-    }
-    .item{
-      width:290px;
-      margin: 10px 10px;
-      display: inline-block;
-      border:1px #fff solid;
-      border-radius: 10px;
-      box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
-    }
-    @media screen and (max-width: 767px){
-      .routecon .route  {
-          width: 92%;
-      }
-      .route .detail li{
-        text-align: center;
-      }
-      .item{
-        margin: 0px;
-        margin-bottom: 10px;
-      }
-    }
-    .route img {
-      width:292px;
-      height:234px;
-      filter:brightness(90%);
-    }
-    .route .detail h3{
-      width: 100%; 
-      color:#BA423F;
-      line-height:30px;
-      padding-bottom:10px;
-    }
-    .route .detail p{
-      padding: 20px 30px;
-      text-align: left;
-    }
-    .route .detail a{
-      text-decoration:none;
-      text-align: right;
-    }
-    .routecon .route:after{
-      content: '';
-      display: block;
-      clear: both;
-    }*/
-/*Banner info */
-/* Slider */
-/*#slider{
-      width:70%;
-      height:500px;
-      margin: 30px auto;
-      position:relative;
-      overflow:hidden;
-    }
-    @keyframes load{
-      from{left:-100%;}
-      to{left:0;}
-    }
-    .slides{
-      width:400%;
-      height:100%;
-      position:relative;
-      -webkit-animation:slide 30s infinite;
-      -moz-animation:slide 30s infinite;
-      animation:slide 30s infinite;
-    }
-    .slider{
-      width:25%;
-      height:100%;
-      float:left;
-      position:relative;
-      z-index:1;
-      overflow:hidden;
-    }
-    .slide img{
-      width:100%;
-      height:100%;
-    }
-    .slide img{
-      width:100%;
-      height:100%;
-    }
-    .image{
-      width:100%;
-      height:100%;
-    }
-    .image img{
-      width:100%;
-      height:100%;
-    }
+/*節目2*/
+.programtwo {
+  width: 30%;
+  position: relative;
+  top: 200px;
+  left: 850px; }
 
-    /* Legend */
-/* .legend{
-      border:500px solid transparent;
-      border-left:800px solid rgba(52, 73, 94, .7);
-      border-bottom:0;
-      position:absolute;
-      bottom:0;
-    }
-*/
-/* Contents */
-/*/*.content{
-      width:100%;
-      height:100%;
-      position:absolute;
-      overflow:hidden;
-    }
-    .content-txt{
-      width:400px;
-      height:150px;
-      float:left;
-      position:relative;
-      top:300px;
-      -webkit-animation:content-s 7.5s infinite;
-      -moz-animation:content-s 7.5s infinite;
-      animation:content-s 7.5s infinite;
-    }
-    .content-txt h1{
-      font-family:Arial;
-      text-transform:uppercase;
-      font-size:24px;
-      color:#fff;
-      text-align:left;
-      margin-left:30px;
-      padding-bottom:10px;
-    }
-    .content-txt h2{
-      font-family:arial;
-      font-weight:normal;
-      font-size:14px;
-      font-style:italic;
-      color:#fff;
-      text-align:left;
-      margin-left:30px;
-    }
+.programtwo .programtwotitle {
+  color: white;
+  font-size: 32px; }
 
-    /* Switch */
-/*.switch{
-      width:120px;
-      height:10px;
-      position:absolute;
-      bottom:50px;
-      z-index:99;
-      left:30px;
-    }
-    .switch > ul{
-      list-style:none;
-    }
-    .switch > ul > li{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:#333;
-      float:left;
-      margin-right:5px;
-      cursor:pointer;
-    }
-    .switch ul{
-      overflow:hidden;
-    }
-    .on{
-      width:100%;
-      height:100%;
-      border-radius:50%;
-      background:#f39c12;
-      position:relative;
-      -webkit-animation:on 30s infinite;
-      -moz-animation:on 30s infinite;
-      animation:on 30s infinite;
-    }
+.programtwo .programtwocontent {
+  font-size: 16px;
+  padding: 20px;
+  line-height: 20px;
+  letter-spacing: 1.2px;
+  width: 300px;
+  color: white; }
 
-    /* Animation */
-/* @-webkit-keyframes slide{
-      0%,100%{
-        margin-left:0%;
-      }
-      21%{
-        margin-left:0%;
-      }
-      25%{
-        margin-left:-100%;
-      }
-      46%{
-        margin-left:-100%;
-      }
-      50%{
-        margin-left:-200%;
-      }
-      71%{
-        margin-left:-200%;
-      }
-      75%{
-        margin-left:-300%;
-      }
-      96%{
-        margin-left:-300%;
-      }
-    }
-    @-moz-keyframes slide{
-      0%,100%{
-        margin-left:0%;
-      }
-      21%{
-        margin-left:0%;
-      }
-      25%{
-        margin-left:-100%;
-      }
-      46%{
-        margin-left:-100%;
-      }
-      50%{
-        margin-left:-200%;
-      }
-      71%{
-        margin-left:-200%;
-      }
-      75%{
-        margin-left:-300%;
-      }
-      96%{
-        margin-left:-300%;
-      }
-    }
-    @keyframes slide{
-      0%,100%{
-        margin-left:0%;
-      }
-      21%{
-        margin-left:0%;
-      }
-      25%{
-        margin-left:-100%;
-      }
-      46%{
-        margin-left:-100%;
-      }
-      50%{
-        margin-left:-200%;
-      }
-      71%{
-        margin-left:-200%;
-      }
-      75%{
-        margin-left:-300%;
-      }
-      96%{
-        margin-left:-300%;
-      }
-    }
+.programtwo .programtwospan {
+  position: absolute;
+  top: 75%;
+  left: 65%;
+  width: 7px;
+  height: 420%;
+  /*border: 1px #7bd3f8 solid;
+      border-radius: 10px;*/
+  background-color: #35ffba; }
 
-    @-webkit-keyframes content-s{
-      0%{left:-420px;}
-      10%{left:0px;}
-      30%{left:0px;}
-      40%{left:0px;}
-      50%{left:0px;}
-      60%{left:0px;}
-      70%{left:0;}
-      80%{left:-420px;}
-      90%{left:-420px;}
-      100%{left:-420px;}
-    }
-    @-moz-keyframes content-s{
-      0%{left:-420px;}
-      10%{left:0px;}
-      30%{left:0px;}
-      40%{left:0px;}
-      50%{left:0px;}
-      60%{left:0px;}
-      70%{left:0;}
-      80%{left:-420px;}
-      90%{left:-420px;}
-      100%{left:-420px;}
-    }
-    @keyframes content-s{
-      0%{left:-420px;}
-      10%{left:20px;}
-      15%{left:0px;}
-      30%{left:0px;}
-      40%{left:0px;}
-      50%{left:0px;}
-      60%{left:0px;}
-      70%{left:0;}
-      80%{left:-420px;}
-      90%{left:-420px;}
-      100%{left:-420px;}
-    }
+.programtwo .programtwospan2 {
+  position: absolute;
+  top: 90%;
+  left: 58%;
+  width: 3px;
+  height: 390%;
+  /*border: 1px #7bd3f8 solid;
+      border-radius: 10px;*/
+  background-color: #35ffba; }
 
-    @-webkit-keyframes on{
-      0%,100%{
-        margin-left:0%;
-      }
-      21%{
-        margin-left:0%;
-      }
-      25%{
-        margin-left:15px;
-      }
-      46%{
-        margin-left:15px;
-      }
-      50%{
-        margin-left:30px;
-      }
-      71%{
-        margin-left:30px;
-      }
-      75%{
-        margin-left:45px;
-      }
-      96%{
-        margin-left:45px;
-      }
-    }
+.programtwo .programtwoHr {
+  position: absolute;
+  top: 481%;
+  right: 41%;
+  width: 91%;
+  /*height: 100%;*/
+  background-color: #35ffba; }
 
-    @-moz-keyframes on{
-      0%,100%{
-        margin-left:0%;
-      }
-      21%{
-        margin-left:0%;
-      }
-      25%{
-        margin-left:15px;
-      }
-      46%{
-        margin-left:15px;
-      }
-      50%{
-        margin-left:30px;
-      }
-      71%{
-        margin-left:30px;
-      }
-      75%{
-        margin-left:45px;
-      }
-      96%{
-        margin-left:45px;
-      }
-    }
+.programtwo .programtwoHr2 {
+  position: absolute;
+  top: 493%;
+  right: 33%;
+  width: 99%;
+  /*height: 100%;*/
+  background-color: #35ffba; }
 
-    @keyframes on{
-      0%,100%{
-        margin-left:0%;
-      }
-      21%{
-        margin-left:0%;
-      }
-      25%{
-        margin-left:15px;
-      }
-      46%{
-        margin-left:15px;
-      }
-      50%{
-        margin-left:30px;
-      }
-      71%{
-        margin-left:30px;
-      }
-      75%{
-        margin-left:45px;
-      }
-      96%{
-        margin-left:45px;
-      }
-    }*/
+.programtwo .programtwoimg {
+  position: absolute;
+  top: 360%;
+  right: 6%; }
+
+.programtwo .programtwoimg2 {
+  position: absolute;
+  top: 210%;
+  right: 100%; }
+
+.programtwo .programtwoimg3 {
+  position: absolute;
+  top: 330%;
+  left: -180%; }
+
+/*立即購買按鈕*/
+.buyticketBtn {
+  /*position:absolute;
+      top:210%;
+      left:50%;*/
+  text-decoration: none;
+  width: 70px;
+  background-color: #FFC116;
+  padding: 10px 10px;
+  margin: 0 auto;
+  margin-top: 700px; }
+
+.buyticketBtn a {
+  text-decoration: none;
+  color: white; }

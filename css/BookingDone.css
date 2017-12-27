@@ -1,29 +1,166 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/*是從_resit.scss*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*-----header-----*/
+.nav {
+  width: 100%;
+  position: fixed;
+  height: 13%;
+  text-align: center;
+  padding: 0.6%;
+  margin-top: 25px;
+  top: 0;
+  z-index: 1000; }
+
+.logo {
+  display: inline-block;
+  width: 15%;
+  min-width: 200px;
+  margin: 0;
+  vertical-align: middle; }
+
+.ul_left,
+.ul_right,
+.ul_left li,
+.ul_right li {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 20px 0 20px;
+  font-family: "微軟正黑體"; }
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 5%;
+  text-align: right;
+  padding: 0.2%;
+  z-index: 999; }
+
+.header .ul_top {
+  margin: 15px; }
+
+.header .ul_top li {
+  display: inline-block;
+  margin: 0 8px 0 8px;
+  font-family: "微軟正黑體"; }
+
+.header .ul_top li a {
+  text-decoration: none;
+  color: white; }
+
+.nav .ul_left li a {
+  text-decoration: none;
+  color: white; }
+
+.nav .ul_right li a {
+  text-decoration: none;
+  color: white; }
+
+/*-----header end-----*/
+body {
+  font-family: "微軟正黑體", Arial, sans-serif;
+  background-image: url("../img/Galaxy_1.jpg");
+  background-size: cover; }
+
 .Bookingh1 {
   font-size: 48px;
-  margin: 20px 10px; }
+  text-align: center;
+  margin: 150px 10px;
+  margin-bottom: 31px;
+  color: white; }
 
 .Bookingh2 {
   font-size: 32px;
-  margin: 20px 10px; }
+  margin: 20px 10px;
+  margin-left: 300px;
+  color: white; }
+
+.memberinfo {
+  text-align: left;
+  margin-left: 300px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: white;
+  width: 500px;
+  border: 3px solid #35ffea; }
+
+.memberinfo p {
+  margin: 10px 10px;
+  padding: 10px 10px; }
+
+.orderinfo {
+  text-align: left;
+  margin-left: 300px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: white;
+  width: 500px;
+  border: 3px solid #35ffea; }
+
+.orderinfo p {
+  margin: 10px 10px;
+  padding: 10px 10px; }
 
 table {
-  border: 1px solid black;
-  margin: 20px 10px;
-  font-size: 20px;
-  /* border-collapse: collapse ; */ }
-
-.css-serial {
-  counter-reset: serial-number;
-  /* Set the serial number counter to 0 */ }
-
-.css-serial td:first-child:before {
-  counter-increment: serial-number;
-  /* Increment the serial number counter */
-  content: counter(serial-number);
-  /* Display the counter */ }
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-align: center;
+  color: white;
+  border: 3px solid #35ffea; }
 
 th {
-  text-align: center;
+  text-align: left;
   padding: 20px 20px; }
 
 td {
@@ -38,13 +175,3 @@ td {
 
 input {
   font-size: 10px; }
-
-.yesmodifyBtn {
-  text-align: center; }
-
-.yesmodifyBtn a {
-  text-decoration: none;
-  width: 20px;
-  padding: 10px 10px;
-  border: 1px solid black;
-  border-radius: 10px; }
