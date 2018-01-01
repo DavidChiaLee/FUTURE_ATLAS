@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BookingDone</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/reset.css"> -->
     <link rel="stylesheet" type="text/css" href="css/BookingDone.css">
 </head>
 
@@ -55,12 +55,13 @@
     </div>
     <!-- header end-->
     
-    <h1 class="Bookingh1">劇場訂票明細(購買成功)</h1>
+    <h1 class="Bookingh1">劇場訂票明細<br>(購買成功)</h1>
     <h2 class="Bookingh2">會員資訊</h2>
     <div class="memberinfo">
         <p>帳號:Leon wang</p>
         <p>Email:Leon wang@gmail.com</p>
     </div>
+
     <h2 class="Bookingh2">訂單訊息</h2>
     <div class="orderinfo">
         <p>訂票編號:CXXXXXXX</p>
@@ -74,50 +75,50 @@
             <td id="orderdate"></td>
         </tr>
     </table> -->
-    <h2 class="Bookingh2">購票明細</h2>
-    <table>
-        <tr>
-            <!-- <th>序號</th> -->
-            <th>節目名稱</th>
-            <th>場次</th>
-            <th>節目日期</th>
-            <th>數量</th>
-            <th>單價</th>
-            <th>小計</th>
-        </tr>
-        <tr>
-            <!-- <td>1</td> -->
-            <td>尋找星生命</td>
-            <td>10:00</td>
-            <td>2018年1月2日</td>
-            <td>1</td>
-            <td>500</td>
-            <td>500</td>
-        </tr>
-        <tr>
-            <!-- <td></td> -->
-            <td>目前積分:1000元</td>
-            <td colspan="2">
-                <input type="radio" name="Scorepoints" value="0" onchange="Userpoints()">不使用積分抵扣消費額
-                <br>
-                <input type="radio" name="Scorepoints" value="1" checked onchange="Userpoints()">使用積分抵扣消費額</td>
-            <td colspan="2" style="padding-top: 40px;">
-                <input type="text" id="Scorenumber" value="500" size=10 style="font-size:16px;" onchange="changeScoreNumber()">
-            </td>
-            <td style="padding-top: 40px;" id="integral"></td>
-        </tr>
+    <div class="orderlistsection">
+        <h2 class="Bookingh2">訂票明細</h2>
+        <table>
+            <tr>
+                <td>節目名稱</td>
+                <td id="program_name">尋找星球</td>
+            </tr>
+            <tr>
+                <td>節目日期</td>
+                <td id="Time_date">xxxx-xx-xx</td>
+            </tr>
+            <tr>
+                <td>場次</td>
+                <td id="Time_Event">xx:xx</td>
+            </tr>
+            <tr>
+                <td>數量</td>
+                <td id="unused_ ticket">xx</td>
+            </tr>
+            <tr>
+                <td>單價</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>小計</td>
+                <td id="unpoints_total">xx</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="Scorepoints" value="0" onchange="Userpoints()">不使用積分
+                    <br>
+                    <input type="radio" name="Scorepoints" value="1" checked onchange="Userpoints()">使用積分
+                    <!-- <input type="text" id="Scorenumber" value="500" size=10 style="font-size:16px;" onchange="changeScoreNumber()"> -->
+                </td>
+                <td style="padding-top: 40px;" id="integral">xx
+                </td>
+            </tr>
+            <tr>
+                <td>總計:</td>
+                <td id="total">xx</td>
+            </tr>
+        </table>
+    </div>
 
-        <tr>
-            <!-- <td></td> -->
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>總計:</td>
-            <td>500元</td>
-        </tr>
-
-    </table>
     <script>
         var now = new Date();
         var year = now.getFullYear();

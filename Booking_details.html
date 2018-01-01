@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Booking details</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/reset.css"> -->
     <link rel="stylesheet" type="text/css" href="css/Booking_details.css">
+    <!-- <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/Booking_details.js"></script> -->
 </head>
 
 <body>
@@ -57,22 +59,59 @@
 
     <h1 class="Bookingh1">劇場訂票明細</h1>
 
-    <form action="" method="get" enctype="">
-        <div class="memberinfosection">
-            <h2 class="Bookingh2">會員資訊</h2>
-            <div class="memberinfo">
-                <p>帳號:Leon wang</p>
-                <p>Email:Leon wang@gmail.com</p>
-            </div>
+    <div class="memberinfosection">
+        <h2 class="Bookingh2">會員資訊</h2>
+        <div class="memberinfo">
+            <p>帳號:Leon wang</p>
+            <p>Email:Leon wang@gmail.com</p>
         </div>
-       
-        <!-- css-serial:自動編號 -->
-        <!-- <table class="css-serial"> -->
-        <div class="orderlistsection">
-            <h2 class="Bookingh2">購票明細</h2>
-            <table>
+    </div>
+
+
+    <div class="orderlistsection">
+        <h2 class="Bookingh2">訂票明細</h2>
+        <table>
+            <tr>
+                <td>節目名稱</td>
+                <td id="program_name"></td>
+            </tr>
+            <tr>
+                <td>節目日期</td>
+                <td id="Time_date"></td>
+            </tr>
+            <tr>
+                <td>場次</td>
+                <td id="Time_Event"></td>
+            </tr>
+            <tr>
+                <td>數量</td>
+                <td id="unused_ ticket"></td>
+            </tr>
+            <tr>
+                <td>單價</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>小計</td>
+                <td id="unpoints_total"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="Scorepoints" value="0" onchange="Userpoints()">不使用積分
+                    <br>
+                    <input type="radio" name="Scorepoints" value="1" checked onchange="Userpoints()">使用積分
+                    <input type="text" id="Scorenumber" value="500" size=10 style="font-size:16px;" onchange="changeScoreNumber()">
+                </td>
+                <td style="padding-top: 40px;"id="integral"> 
+                </td>
+            </tr>
+            <tr>
+                <td>總計:</td>
+                <td id="total"></td>
+            </tr>
+        </table>
+        <!-- <table>
                 <tr style="font-weight: bold;">
-                    <!-- <td>序號</td> -->
                     <td>節目名稱</td>
                     <td>節目日期</td>
                     <td>場次</td>
@@ -81,7 +120,6 @@
                     <td>小計</td>
                 </tr>
                 <tr>
-                    <!-- <td>1</td> -->
                     <td id="program_name"></td>
                     <td id="Time_date"></td>
                     <td id="Time_Event"></td>
@@ -89,29 +127,19 @@
                     <td>500元</td>
                     <td id="unpoints_total"></td>
                 </tr>
-                <!--  <tr>
-                                    <td>2</td>
-                                    <td>恐龍末日</td>
-                                    <td >11:00</td>
-                                    <td>2018年1月3日</td>
-                                    <td>1</td>
-                                    <td>500</td>
-                                    <td>500</td>
-                                </tr> -->
+
                 <tr>
-                    <!-- <td></td> -->
                     <td>目前積分:1000元</td>
                     <td colspan="2">
-                        <input type="radio" name="Scorepoints" value="0" onchange="Userpoints()">不使用積分抵扣消費額
+                        <input type="radio" name="Scorepoints" value="0" onchange="Userpoints()">不使用積分
                         <br>
-                        <input type="radio" name="Scorepoints" value="1" checked onchange="Userpoints()">使用積分抵扣消費額</td>
+                        <input type="radio" name="Scorepoints" value="1" checked onchange="Userpoints()">使用積分</td>
                     <td colspan="2" style="padding-top: 40px;">
                         <input type="text" id="Scorenumber" value="500" size=10 style="font-size:16px;" onchange="changeScoreNumber()">
                     </td>
                     <td style="padding-top: 40px;" id="integral"></td>
                 </tr>
                 <tr>
-                    <!-- <td></td> -->
                     <td></td>
                     <td></td>
                     <td></td>
@@ -120,38 +148,34 @@
                     <td id="total">
                     </td>
                 </tr>
-            </table>
-        </div>       
-      
+            </table> -->
+    </div>
 
-        <!-- <hr size="2px" align="center" width="95%"> -->
+    <h2 class="Bookingh2">輸入信用卡資訊</h2>
+    <div class="creditCardinfo">
+        <p>信用卡號碼</p>
+        <p style="font-size:10px;">
+            <input type="text" size=2>-
+            <input type="text" size=2>-
+            <input type="text" size=2>-
+            <input type="text" size=2>
+        </p>
+        <p>到期日</p>
+        <p style="font-size:5px;">
+            <input type="text" size=2> /
+            <input type="text" size=2>
+        </p>
+        <!-- size是設定input大小 -->
+        <p>驗證碼</p>
+        <p>
+            <input type="text" size=2>
+        </p>
+    </div>
 
-        <h2 class="Bookingh2">輸入信用卡資訊</h2>
-        <div class="creditCardinfo">
-            <p>信用卡號碼</p>
-            <p style="font-size:10px;">
-                <input type="text" size=2> -
-                <input type="text" size=2> -
-                <input type="text" size=2> -
-                <input type="text" size=2>
-            </p>
-            <p>到期日</p>
-            <p style="font-size:5px;">
-                <input type="text" size=2> /
-                <input type="text" size=2>
-            </p>
-
-
-            <!-- size是設定input大小 -->
-            <p>驗證碼</p>
-            <p><input type="text" size=2></p>
-
-        </div>
-        <div class="yesmodifyBtn">
-            <a href="Theaterbuyticket.html">修改</a>
-            <a href="#">結帳</a>
-        </div>
-    </form>
+    <div class="yesmodifyBtn">
+        <a href="buyTTicket.html">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="BookingDone.html">結帳</a>
+    </div>
 
     <script type="text/javascript">
         var storage = sessionStorage;

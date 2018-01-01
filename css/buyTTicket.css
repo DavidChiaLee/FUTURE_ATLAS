@@ -112,101 +112,63 @@ table {
   /*outline: 1px solid red;*/ }
 
 body {
-  font-family: "微軟正黑體", Arial, sans-serif;
+  /*outline: 1px solid red;*/
   background-image: url("../img/Galaxy_1.jpg");
   background-size: cover; }
 
-.Bookingh1 {
-  font-size: 48px;
+/*購買票劵*/
+.buyticketarea {
+  width: 100%;
+  font-size: 20px;
+  margin: 150px auto; }
+
+.buyticketarea h2 {
+  color: white;
   text-align: center;
-  margin: 150px 10px;
-  margin-bottom: 31px;
-  color: white; }
-
-@media screen and (max-width: 767px) {
-  .Bookingh1 {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto; } }
-
-.Bookingh2 {
   font-size: 32px;
-  margin: 20px 10px;
-  margin-top: 50px;
-  margin-left: 23%;
+  margin: 30px 30px; }
+
+.buyticketarea table {
+  border: 3px solid #35ffea;
+  width: 40%;
+  height: 300px;
+  margin: 0 auto;
+  opacity: 0.9;
+  z-index: 1000;
   color: white; }
 
 @media screen and (max-width: 767px) {
-  .Bookingh2 {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto; } }
+  .buyticketarea table {
+    width: 80%; } }
 
-.memberinfo {
+.buyticketarea td {
+  padding: 10px 10px;
+  padding-top: 20px;
+  padding-left: 20px;
   text-align: left;
-  margin-left: 23%;
-  font-size: 20px;
-  letter-spacing: 3px;
-  color: white;
-  width: 54%;
-  border: 3px solid #35ffea; }
+  font-size: 23px;
+  /*border:1px solid black; */ }
 
 @media screen and (max-width: 767px) {
-  .memberinfo {
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto; } }
+  .buyticketarea td {
+    /*width: 60px;*/
+    font-size: 20px; }
+  .buyticketarea input {
+    font-size: 16px; }
+  .buyticketarea select {
+    font-size: 16px; } }
 
-.memberinfo p {
-  margin: 10px 10px;
-  padding: 10px 10px; }
-
-.orderinfo {
-  text-align: left;
-  margin-left: 23%;
-  font-size: 20px;
-  letter-spacing: 3px;
+.buyticketarea a {
   color: white;
-  width: 54%;
-  border: 3px solid #35ffea; }
+  background-color: #FFC116;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-align: center; }
 
-@media screen and (max-width: 767px) {
-  .orderinfo {
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto; } }
+.buyticketarea .buyticket {
+  float: right; }
 
-.orderinfo p {
-  margin: 10px 10px;
-  padding: 10px 10px; }
-
-.orderlistsection table {
-  margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-size: 20px;
-  letter-spacing: 3px;
-  color: white;
-  border: 3px solid #35ffea;
-  width: 54%; }
-
-@media screen and (max-width: 767px) {
-  .orderlistsection table {
-    width: 85%; } }
-
-th {
-  text-align: center;
-  padding: 20px 10px; }
-
-td {
-  text-align: left;
-  padding: 10px 10px; }
-
-.integral {
-  display: inline-block; }
-
-.Bookingh3 {
-  font-size: 20px; }
-
-input {
-  font-size: 10px; }
+.buyticketarea .buyticket:after {
+  content: '';
+  display: block;
+  clear: both; }
