@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/homepage_TheaterV2.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js">	
+  	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".Theater").click(function(){
+				$(this).removeClass('notcurrent').addClass('current');
+				$(".Theater").not(this).removeClass('current').addClass('notcurrent');
+
+				//換別的區塊，停止播圖
+				if($(".intro").hasClass('current')){
+					time = setInterval(function(){
+						$(".intro").css('background-image', 'url("'+pic[a%=2]+'")');
+						a++;
+					},3000);
+				}else{
+					clearInterval(time);
+				}
+			});
+			var pic = new Array("img/Theater_seat.jpg", "img/dome_ theater.png");
+			var a =0;
+			// 滑鼠滑進 圖 停止輪播
+			$(".intro").mouseleave(function() {
+				time = setInterval(function(){
+					$(".intro").css('background-image', 'url("'+pic[a%=2]+'")');
+					a++;
+				},3000);
+			});
+			$(".intro").mouseenter(function() {
+				clearInterval(time);
+			});
+			
+			// 圖自動播放
+			time = setInterval(function(){
+				$(".intro").css('background-image', 'url("'+pic[a%=2]+'")');
+				a++;
+			},3000);
+		});
+	</script>
+</head>
+<body>
+	<ul class="TheaterArea">
+		<li class="Theater current intro">
+			<div class="cover"></div>
+			<div class="label">劇場介紹</div>
+			<div class="info" id="info">
+				未來劇場總建築面積10369平方米，共有12個廳、9527個座位，提供最舒適的貴賓級觀劇服務。
+			</div>
+		</li>
+		<li class="Theater notcurrent">
+			<div class="cover"></div>
+			<div class="label"  >尋找星生命</div>
+			<!-- <img src="img/spaceship.png" width="300px" height="300px;"> -->
+			<div class="info" id="info">
+				宇宙與生命，一向是人類對自然的最大好奇。<br>宇宙中的生命，自然是最吸引人們關注的話題。
+			</div>
+		</li>
+		<li class="Theater notcurrent">
+			<div class="cover"></div>
+			<div class="label">末世決戰</div>
+			<!-- <img src="img/spaceman.png" width="300px" height="300px;"> -->
+			<div class="info" id="info">
+				正當人類被打得落花流水，拯救文明的任務悄悄展開，一位科學家在末世製造出九個神奇的布娃娃，他們躲過可怕浩劫。
+			</div>
+		</li>
+		<li class="buy notcurrent">
+			<!-- <div class="cover"></div> -->
+			<a href="javascript:void(0)">前往購票</a>
+		</li><!-- 前往購票按鈕 -->
+	</ul>
+</body>
+</html>
